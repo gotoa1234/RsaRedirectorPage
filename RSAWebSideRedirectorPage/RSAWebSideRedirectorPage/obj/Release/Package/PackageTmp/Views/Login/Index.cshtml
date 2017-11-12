@@ -1,0 +1,46 @@
+﻿@model RSAWebSideRedirectorPage.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login Page";
+    Layout = null;
+}
+
+<div class="row">
+    <h2>RSA非對稱加密顧問SN應用</h2>
+    <div>
+        <table>
+            <tr>
+                <td>顧問序號:</td>
+            </tr>
+            <tr>
+                <td>10820</td>
+            </tr>
+        </table>
+    </div>
+    <p>consn = 10820 加密後的字串(Publickey + consn 加密後的結果)</p>
+    <p>@Model.nowEncryptConsn</p>
+    <br />
+    <p>當前連結金鑰(PublicKey): </p>
+    <p>@Model.nowPublicKey</p>
+    <br />
+    <p>當前連結私有金鑰(PrivateKey): </p>
+    <p>@Model.nowPrivateKey</p>
+    <br />
+    <p>完整的Href: </p>
+    <p>@(Url.Action("LoginValidation", "Home", new { EnconSn = Model.nowEncryptConsn }))</p>
+    <br />
+    <a href="@(Url.Action("LoginValidation", "Home", new { EnconSn = Model.nowEncryptConsn}))">當前有效的登入連結</a>
+    <hr />
+    <div>以下為歷史連結 (最新的Key在最上方)</div>
+
+    @for(int i = Model.publicKey.Count()-1;i>=0;i--)
+    {
+        <hr />
+        <div>序號： @i</div>
+        <a href="@(Url.Action("LoginValidation", "Home", new { EnconSn = Model.EncryptConsn[i]  }))">產生登入連結</a>
+        <br />
+        <p>序號： @i 完整的Href: </p>
+        <p>@(Url.Action("LoginValidation", "Home", new { EnconSn = Model.EncryptConsn[i] }))</p>
+        <br />
+        <hr />
+    }
+</div>

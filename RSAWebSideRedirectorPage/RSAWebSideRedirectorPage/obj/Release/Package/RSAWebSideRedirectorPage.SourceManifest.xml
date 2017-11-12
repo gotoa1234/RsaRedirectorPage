@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\RSA加密的Web登入頁面\RSAWebSideRedirectorPage\RSAWebSideRedirectorPage\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\RSA加密的Web登入頁面\RSAWebSideRedirectorPage\RSAWebSideRedirectorPage\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\RSA加密的Web登入頁面\RSAWebSideRedirectorPage\RSAWebSideRedirectorPage\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
